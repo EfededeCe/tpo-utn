@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/41926f3bc4.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    
+    <title>La cocina de la Abuela</title>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="row">
+        <div class="col-sm">
+            <img src="" alt="Logo" width="200px">
+        </div>
+        <nav class="col-sm">
+            <ul class=" nav">
+                <li class=" nav-item"><a href="#frame1" class="nav-link">Nosotros</a></li>
+                <li class=" nav-item"><a href="#creador" class="nav-link">Creador</a></li>
+                <li class=" nav-item"><a href="#ofertas" class="nav-link">Ofertas</a></li>
+                <li class=" nav-item"><a href="#proceso" class="nav-link">Catering</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <p class="display-6" id="frame1">.</p>
+
+
+    <!-- Main -->
+    <main class="col row " id="main">
+
+    <!-- Presentación -->
+        <section class="row d-flex justify-content-center flex-wrap align-content-center mt-2" id="nosotros">
+            <div class="col-md-6">
+                <h2 class="display-3">La cocina de la Abuela... Para el mundo</h2>
+                <h3 class="display-5">Probá nustras delicias en cualquiera de nuestras sucursales</h3>
+                <p class="lead text-secondary">Vivimos en un mundo en el que tomarse un tiempo para comer tranquilxs es casi un lujo, nosotros venimos a recordarte que la comida no solo es alimento, sino también un placer.</p>
+            </div>
+            <div class="col-md-6 d-flex">
+                <img src="IMG/fideos.jpg" id="fideos" class="rounded-circle my-auto" alt="Fideos con salsa de hongos" width="100%">
+            </div>
+            <button type="button" class="btn btn-success col-sm-2 "><a href="#catering" class="nav-link">Buscanos acá</a></button>
+        </section>
+        <p class="display-6" id="creador">.</p>
+
+
+    <!-- Personal -->
+        <section class=" align-content-end">
+            <h3 class="display-4">¿Poqué nosotros?</h3>
+            <p class="lead text-secondary mx-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat necessitatibus hic nulla a ea quo modi ipsam at dignissimos quos, doloremque ipsum sapiente voluptas minus veniam eaque sit quam autem. </p>
+        </section>
+        <p class="display-6" id="ofertas">.</p>
+
+
+    <!-- Contacto para ofertas -->
+        <section class="formulario" id="ofertas">
+            <h3 class="display-4">Para enviarte nuestros precios de cliente completá el formulario</h3>
+            <form action="/action_page.php d-flex justify-content-center">
+                <div class="mb-10 mt-3">
+                    <ul>
+                        <li><label for="fullName">Nombre y apellido:</label></li>
+                        <li><input type="text" class="form-control" id="fullName" placeholder="Ejemplo: Juana De Arco" name="nombre"></li>
+                        <li><label for="email">Email:</label></li>
+                        <li><input type="email" class="form-control" id="email" placeholder="Enter email" name="email"></li>
+                        <li><label for="tel">Telefono:</label></li>
+                        <li><input type="number" class="form-control" id="tel" placeholder="254666555" name="tel"></li>
+                    </ul>
+                </div>
+                <div class="form-check mb-3">
+                    <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="remember"> Recibir ofertas</label>
+                </div>
+                <button type="button" class="btn btn-success col-sm-2">Enviar</button>
+            </form>
+        </section>
+        <p class="display-6 mb-5" id="proceso">.</p>
+
+
+
+
+
+
+    <!-- Form proceso -->
+        <!-- <section class="formulario-proceso" id="catering">
+            <h3 class="display-4">Llevanos con vos a donde estés!!</h3>
+            <form action="/action_page.php" class="was-validated">
+                <div class="mb-3 mt-3">
+                  <label for="uname" class="form-label">Username:</label>
+                  <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="pwd" class="form-label">Password:</label>
+                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="checkbox" id="myCheck"  name="remember" required>
+                  <label class="form-check-label" for="myCheck">I agree on blabla.</label>
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">Check this checkbox to continue.</div>
+                </div>
+              <button type="button" class="btn btn-success col-sm-2">Submit</button>
+              </form> -->
+
+
+
+
+              <div class="contiene-wiz">
+                <div class="wiz" id="wiz-1">
+                    <form action="" class="" id="form-comenzales">
+                        <ul>
+                            <li><input type="radio" name="lvl" id="eco"><label class="lead text-secondary" for="eco">Económico - $1000</label></li>
+                            <li><input type="radio" name="lvl" id="medio"><label class="lead text-secondary" for="medio">Intermedio - $1500</label></li>
+                            <li><input type="radio" name="lvl" id="lux"><label class="lead text-secondary" for="lux">De Lujo - $2500</label></li>
+                        </ul>
+                        <select name="hasta" id="cantidad-personas">
+                            <option value="20">Hasta 20 comenzales</option>
+                            <option value="50">Hasta 50 comenzales</option>
+                            <option value="100">Hasta 100 comenzales</option>
+                        </select>
+                    </form>
+                    <p class="lead text-secondary" id="por-persona">El precio por persona es: </p>
+                    <button type="button" class="btn btn-success col-sm btn-anterior">Volver</button>
+                    <button type="button" class="btn btn-success col-sm btn-siguiente">Siguiente</button>
+                </div>
+                <div class="wiz" id="wiz-2">
+                    <form action="" class="" id="form-vajilla">
+                        <p class="lead text-secondary">¿Inluimos vajilla? Coste $400 </p>
+                        <input type="radio" name="vajilla" id="si"><label for="si">Si</label>
+                        <input type="radio" name="vajilla" id="no"><label for="no">No</label>
+                    </form>
+                    <button type="button" class="btn btn-success col-sm btn-anterior">Volver</button>
+                    <button type="button" class="btn btn-success col-sm btn-siguiente">Siguiente</button>
+                </div>
+                <div class="wiz" id="wiz-3">
+                    <form action="" class="" id="form-mobiliario">
+                        <p class="lead text-secondary">¿Incluimos mobiliario? (mesas, sillas, manteles) Coste $200</p>
+                        <input type="radio" name="mobil" id="si"><label for="si">Si</label>
+                        <input type="radio" name="mobil" id="no"><label for="no">No</label>
+                        <button type="button" class="btn btn-success col-sm btn-anterior">Volver</button>
+                        <button type="button" class="btn btn-success col-sm btn-siguiente">Siguiente</button>
+                    </form>
+                </div>
+                <!-- <div class="wiz" id="wiz-4">
+                    <form action="" class="" id="form-tot">
+
+                    </form>
+                </div> --> 
+              </div>
+        </section>
+    </main>
+
+
+
+
+
+
+
+<!-- Footer -->
+    <footer class="row">
+        <div class="col-sm-2 span">
+            <img src="" alt="Logo">
+        </div>
+        <div class="col-sm">
+            <p class="text-secondary">Redes sociales:</p>
+            <ul class="row d-flex">
+                <li class="col-sm justify-content-center"><a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                <li class="col-sm justify-content-center"><a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                <li class="col-sm justify-content-center"><a href="linkedin.com/in/federico-del-corro-b49501236" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+                <li class="col-sm justify-content-center"><a href="https://es-la.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
+
+

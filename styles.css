@@ -1,0 +1,113 @@
+/* mobile first */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    min-height: 100vh;
+    text-align: center;
+}
+
+
+header {
+    background-color: rgba(0, 0, 0, 0.846);
+    color: aliceblue;
+    min-height: 100px;
+    min-width: 100%;
+    top: 0%;
+    position: fixed;
+}
+
+li {
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+main.row {
+    color: aliceblue;
+    background-color: rgba(0, 0, 0, 0.846);
+    margin: 40% 5%;
+    min-height: 60vh;
+    scroll-behavior: smooth;
+}
+
+#nosotros, #catering {
+    min-height: 85vh;
+}
+
+#creador, #ofertas {
+    min-height: 13vh;
+}
+
+.contiene-wiz {
+    background-color: rgba(51, 64, 85, 0.403);
+    min-width: 500px;
+    min-height: 300px;
+    position: relative;
+    /* left: -300%; */
+    
+}
+
+.wiz {
+    width: 300px;
+    min-height: 300px;
+    background-color: brown;
+    margin: 5px;
+    position: absolute;
+    
+}
+
+#wiz-1 {
+    left: 40%;
+    z-index: 4;
+    background-color: yellow;
+}
+#wiz-2 {
+    left: 35%;
+    background-color: blue;
+    z-index: 3;
+}
+#wiz-3 {
+    left: 30%;
+    background-color: green;
+    z-index: 2;
+}
+#wiz-4 {
+    left: 25%;
+    background-color: brown;
+    z-index: 1;
+}
+
+
+footer {
+    color: aliceblue;
+    background-color: rgba(0, 0, 0, 0.846);
+    margin-bottom: 0px;
+    min-height: 10vh;
+}
+
+                    /* Media */
+
+@media screen and (min-width: 575px){
+    body {
+        background-image: url(/TP/IMG/Cocina.webp);
+        background-attachment: fixed;
+    }
+
+    main.row {
+        margin: 5%;
+    }
+
+    #fideos {
+        height: 500px;
+    }
+
+    #main {
+        max-width: 1080px;
+    }
+
+}
