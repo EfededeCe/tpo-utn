@@ -5,12 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    
     <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/41926f3bc4.js" crossorigin="anonymous"></script>
+
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+
     <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
     
     <title>La cocina de la Abuela</title>
 </head>
@@ -47,13 +51,13 @@
             <div class="col-md-6 d-flex">
                 <img src="IMG/fideos.jpg" id="fideos" class="rounded-circle my-auto" alt="Fideos con salsa de hongos" width="100%">
             </div>
-            <button type="button" class="btn btn-success col-sm-2 "><a href="#catering" class="nav-link">Buscanos acá</a></button>
+            <button type="button" class="btn btn-success col-sm-2 "><a href="#proceso" class="nav-link">Buscanos acá</a></button>
         </section>
         <p class="display-6" id="creador">.</p>
 
 
     <!-- Personal -->
-        <section class=" align-content-end">
+        <section class="">
             <h3 class="display-4">¿Poqué nosotros?</h3>
             <p class="lead text-secondary mx-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat necessitatibus hic nulla a ea quo modi ipsam at dignissimos quos, doloremque ipsum sapiente voluptas minus veniam eaque sit quam autem. </p>
         </section>
@@ -63,22 +67,24 @@
     <!-- Contacto para ofertas -->
         <section class="formulario" id="ofertas">
             <h3 class="display-4">Para enviarte nuestros precios de cliente completá el formulario</h3>
-            <form action="/action_page.php d-flex justify-content-center">
+            <form action="" class="">
                 <div class="mb-10 mt-3">
                     <ul>
-                        <li><label for="fullName">Nombre y apellido:</label></li>
-                        <li><input type="text" class="form-control" id="fullName" placeholder="Ejemplo: Juana De Arco" name="nombre"></li>
+                        <li><label for="nombre">Nombre:</label></li>
+                        <li><input type="text" class="form-control" id="nombre" placeholder="Ej: Juana" name="nombre"></li>
+                        <li><label for="apellido">Apellido:</label></li>
+                        <li><input type="text" class="form-control" id="apellido" placeholder="Ej: De Arco" name="apellido"></li>
                         <li><label for="email">Email:</label></li>
-                        <li><input type="email" class="form-control" id="email" placeholder="Enter email" name="email"></li>
+                        <li><input type="email" class="form-control" id="email" placeholder="Ej: juana_22@franc.com" name="email"></li>
                         <li><label for="tel">Telefono:</label></li>
-                        <li><input type="number" class="form-control" id="tel" placeholder="254666555" name="tel"></li>
+                        <li><input type="number" class="form-control" id="tel" placeholder="Ej: 254666555" name="tel"></li>
                     </ul>
                 </div>
                 <div class="form-check mb-3">
                     <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" name="remember"> Recibir ofertas</label>
+                    <input class="form-check-input" type="checkbox" name="ofertas"> Recibir ofertas</label>
                 </div>
-                <button type="button" class="btn btn-success col-sm-2">Enviar</button>
+                <submit type="submit" class="btn btn-success col-sm-2" id="nomb">Enviar</submit>
             </form>
         </section>
         <p class="display-6 mb-5" id="proceso">.</p>
@@ -89,54 +95,47 @@
 
 
     <!-- Form proceso -->
-        <!-- <section class="formulario-proceso" id="catering">
-            <h3 class="display-4">Llevanos con vos a donde estés!!</h3>
-            <form action="/action_page.php" class="was-validated">
-                <div class="mb-3 mt-3">
-                  <label for="uname" class="form-label">Username:</label>
-                  <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
-                  <div class="valid-feedback">Valid.</div>
-                  <div class="invalid-feedback">Please fill out this field.</div>
-                </div>
-                <div class="mb-3">
-                  <label for="pwd" class="form-label">Password:</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
-                  <div class="valid-feedback">Valid.</div>
-                  <div class="invalid-feedback">Please fill out this field.</div>
-                </div>
-                <div class="form-check mb-3">
-                  <input class="form-check-input" type="checkbox" id="myCheck"  name="remember" required>
-                  <label class="form-check-label" for="myCheck">I agree on blabla.</label>
-                  <div class="valid-feedback">Valid.</div>
-                  <div class="invalid-feedback">Check this checkbox to continue.</div>
-                </div>
-              <button type="button" class="btn btn-success col-sm-2">Submit</button>
-              </form> -->
+        <section class="formulario-proceso row d-flex justify-content-center flex-wrap align-content-center" id="catering">
+        
+            <button type="button" class="btn btn-success col-sm-2" onclick="catering()"><a href="#proceso" class="nav-link">Quiero un catering</a></button>
 
+            <div class="contiene-wiz">
 
-
-
-              <div class="contiene-wiz">
+                <!-- Primer wizard-->
                 <div class="wiz" id="wiz-1">
-                    <form action="" class="" id="form-comenzales">
-                        <ul>
-                            <li><input type="radio" name="lvl" id="eco"><label class="lead text-secondary" for="eco">Económico - $1000</label></li>
-                            <li><input type="radio" name="lvl" id="medio"><label class="lead text-secondary" for="medio">Intermedio - $1500</label></li>
-                            <li><input type="radio" name="lvl" id="lux"><label class="lead text-secondary" for="lux">De Lujo - $2500</label></li>
-                        </ul>
-                        <select name="hasta" id="cantidad-personas">
-                            <option value="20">Hasta 20 comenzales</option>
-                            <option value="50">Hasta 50 comenzales</option>
-                            <option value="100">Hasta 100 comenzales</option>
-                        </select>
+                    <form action="" class="" id="form-comenzales" onchange="primerWiz()">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="lvl" id="eco" value="economico">
+                                <label class="form-check-label lead text-secondary" for="eco">Económico - $1000</label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="lvl" id="medio" value="medio">
+                                <label class="form-check-label lead text-secondary" for="medio">Intermedio - $1500</label>
+                            </div>
+                            
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="lvl" id="lux" value="lux">
+                                <label class="form-check-label lead text-secondary" for="lux">De Lujo - $2500</label>
+                            </div>
+
+                            <select class="form-select">
+                                <option class="opc" value="0" selected>Cuantos comensales?</option>
+                                <option class="opc" value="20">Hasta 20 comensales</option>
+                                <option class="opc" value="50">Hasta 50 comensales</option>
+                                <option class="opc" value="100">Hasta 100 comensales</option>
+                            </select>
                     </form>
+
                     <p class="lead text-secondary" id="por-persona">El precio por persona es: </p>
                     <button type="button" class="btn btn-success col-sm btn-anterior">Volver</button>
-                    <button type="button" class="btn btn-success col-sm btn-siguiente">Siguiente</button>
+                    <button type="button" class="btn btn-success col-sm btn-siguiente" onclick="siguiente()">Siguiente</button>
                 </div>
+                
+                <!-- Segundo wizard-->
                 <div class="wiz" id="wiz-2">
                     <form action="" class="" id="form-vajilla">
-                        <p class="lead text-secondary">¿Inluimos vajilla? Coste $400 </p>
+                        <p class="lead text-secondary">¿Incluimos vajilla? Coste $400 </p>
                         <input type="radio" name="vajilla" id="si"><label for="si">Si</label>
                         <input type="radio" name="vajilla" id="no"><label for="no">No</label>
                     </form>
@@ -152,12 +151,12 @@
                         <button type="button" class="btn btn-success col-sm btn-siguiente">Siguiente</button>
                     </form>
                 </div>
-                <!-- <div class="wiz" id="wiz-4">
-                    <form action="" class="" id="form-tot">
+            <!-- <div class="wiz" id="wiz-4">
+                <form action="" class="" id="form-tot">
 
-                    </form>
-                </div> --> 
-              </div>
+                </form>
+            </div> --> 
+            </div>
         </section>
     </main>
 
@@ -183,6 +182,7 @@
         </div>
     </footer>
 
+  
     <script src="main.js"></script>
 </body>
 </html>

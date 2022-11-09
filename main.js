@@ -31,11 +31,85 @@ Ofrecer (previo un pago del 30%) pagar en 6 o 12 cuotas el monto restante:
 
 */
 
-let nombre = document.querySelector("#fullName").value; 
-let mail = document.querySelector("#email").value; 
-let tel = document.querySelector("#tel").value;
+// let nombre = document.querySelector("#fullName").value; 
+// let mail = document.querySelector("#email").value; 
+// let tel = document.querySelector("#tel").value;
 
+function catering() {
+    document.querySelector("#catering button").classList.toggle("esconder");
+    document.querySelector(".contiene-wiz").classList.toggle("mostrar");
+}
 
+lvl = "cero";
+comensales = 0;
+
+function primerWiz(){
+    let radios = document.getElementsByName("lvl");
+    let adentro = "adentro";
+    for (let radio of radios){
+        if (radio.checked){
+            adentro = radio.value;
+        }
+    }
+    lvl = adentro;
+    
+    switch (lvl) {
+        case "economico":
+            lvl = 1000
+            break;
+        case "medio":
+            lvl = 1500
+            break;
+        case "lux":
+                lvl = 2500
+            break;
+        
+        default:
+            "Algo malió sal..."
+            break;
+            }
+            
+    console.log(lvl);
+    
+    comensales = document.querySelector(".form-select").value;
+    console.log(comensales);
+
+    switch (comensales) {
+        case "0":
+            comensales = 0
+            break;
+        case "20":
+            comensales = 1
+            break;
+        case "50":
+            comensales = 0.9
+            break;
+        case "100":
+            comensales = 0.8
+            break;
+    
+        default:
+            "Algo malió sal..."
+            break;
+    }
+
+    totl = lvl * comensales;
+    document.querySelector("#por-persona").innerHTML = "El precio por persona es: " + totl;
+
+}
+
+function siguiente() {
+    if (comensales == 0 && !document.querySelector("#pErr")){
+        let noSigue = document.createElement("p");
+    let botonSigue = document.querySelector("#wiz-1 #por-persona");
+        noSigue.innerHTML = `Complete los campos`;
+        noSigue.id = "pErr";
+        noSigue.style.color = "red"; 
+        botonSigue.insertAdjacentElement("afterEnd",noSigue);
+    } else if (comensales !== 0) {
+        document.querySelector("#wiz-1").classList.add("mover-wiz")
+    }
+}
 
 
 
@@ -44,6 +118,27 @@ let tel = document.querySelector("#tel").value;
 
 
 $(document).ready(function(){
-    console.log($("#fullName").value)
+
+    $("#ofertas").validate({
+        rules: {
+            fullName: {
+                required: true,
+                min: 3,
+                number: false
+            }
+
+
+
+        }
     });
+    
+
+    $("#nomb").on("click", function(){
+        
+        let nombre = $("#fullName").val();
+        console.log(nombre);
+        
+    });
+
+});
 
