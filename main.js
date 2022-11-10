@@ -31,18 +31,41 @@ Ofrecer (previo un pago del 30%) pagar en 6 o 12 cuotas el monto restante:
 
 */
 
-// let nombre = document.querySelector("#fullName").value; 
-// let mail = document.querySelector("#email").value; 
-// let tel = document.querySelector("#tel").value;
+// Formulario de Proceso
 
+        // Inicialización de variables
+// Divs de los wizards
+let wiz1 = document.querySelector("#wiz-1");
+let wiz2 = document.querySelector("#wiz-2");
+let wiz3 = document.querySelector("#wiz-3");
+
+// Inicializo donde guardo respuestas del formulario
+let lvl = "";
+let comensales = 0;
+
+// Selecciono los 3 botones "siguiente" del wizzard
+let btnSigue = document.querySelectorAll(".btn-siguiente");
+console.log(btnSigue);
+
+// Selecciono los 3 botones "anterior" del wizzard
+let anterior = document.querySelectorAll(".btn-anterior");
+
+// Creo el parrafo del error para el wizard
+let noSigue = document.createElement("p");
+noSigue.innerHTML = `Complete los campos`;
+noSigue.id = "pErr";
+noSigue.style.color = "red";
+
+
+
+// Entra el div para mostrar el wizard con un onclick
 function catering() {
     document.querySelector("#catering button").classList.toggle("esconder");
     document.querySelector(".contiene-wiz").classList.toggle("mostrar");
 }
 
-lvl = "cero";
-comensales = 0;
 
+// Validación primer wizard 
 function primerWiz(){
     let radios = document.getElementsByName("lvl");
     let adentro = "adentro";
@@ -60,7 +83,7 @@ function primerWiz(){
         case "medio":
             lvl = 1500
             break;
-        case "lux":
+            case "lux":
                 lvl = 2500
             break;
         
@@ -98,18 +121,31 @@ function primerWiz(){
 
 }
 
+
+
+// Muevo el wizard que corresponda, si los campos están seleccionados
 function siguiente() {
-    if (comensales == 0 && !document.querySelector("#pErr")){
-        let noSigue = document.createElement("p");
-    let botonSigue = document.querySelector("#wiz-1 #por-persona");
-        noSigue.innerHTML = `Complete los campos`;
-        noSigue.id = "pErr";
-        noSigue.style.color = "red"; 
-        botonSigue.insertAdjacentElement("afterEnd",noSigue);
-    } else if (comensales !== 0) {
-        document.querySelector("#wiz-1").classList.add("mover-wiz")
+    if(wiz2.classList.contains("mover-wiz") && !wiz3.classList.contains("mover-wiz")){
+            wiz3.classList.add("mover-wiz")
+    }
+    if(wiz1.classList.contains("mover-wiz") && !wiz2.classList.contains("mover-wiz")){
+            wiz2.classList.add("mover-wiz")
+    }
+    if (!wiz1.classList.contains("mover-wiz")){
+        if (comensales == 0 && !document.querySelector("#pErr")){
+            anterior[0].insertAdjacentElement("beforeBegin",noSigue);
+        } else if (comensales !== 0) {
+            wiz1.classList.add("mover-wiz")
+        }
     }
 }
+console.log();
+
+
+// Agrego los Listeners a los botones
+btnSigue[0].addEventListener("click", siguiente);
+btnSigue[1].addEventListener("click", siguiente);
+btnSigue[2].addEventListener("click", siguiente);
 
 
 
@@ -118,7 +154,7 @@ function siguiente() {
 
 
 $(document).ready(function(){
-
+    
     $("#ofertas").validate({
         rules: {
             fullName: {

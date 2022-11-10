@@ -67,7 +67,7 @@
     <!-- Contacto para ofertas -->
         <section class="formulario" id="ofertas">
             <h3 class="display-4">Para enviarte nuestros precios de cliente completá el formulario</h3>
-            <form action="" class="">
+            <form action="" class="row d-flex justify-content-center flex-wrap align-content-center">
                 <div class="mb-10 mt-3">
                     <ul>
                         <li><label for="nombre">Nombre:</label></li>
@@ -82,7 +82,7 @@
                 </div>
                 <div class="form-check mb-3">
                     <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" name="ofertas"> Recibir ofertas</label>
+                    <input class="form-check-input" type="checkbox" name="ofertas">Recibir ofertas</label>
                 </div>
                 <submit type="submit" class="btn btn-success col-sm-2" id="nomb">Enviar</submit>
             </form>
@@ -97,7 +97,7 @@
     <!-- Form proceso -->
         <section class="formulario-proceso row d-flex justify-content-center flex-wrap align-content-center" id="catering">
         
-            <button type="button" class="btn btn-success col-sm-2" onclick="catering()"><a href="#proceso" class="nav-link">Quiero un catering</a></button>
+            <button type="button" class="btn btn-success col-sm-2"  onclick="catering()" ><a href="#proceso" class="nav-link">Quiero un catering</a></button>
 
             <div class="contiene-wiz">
 
@@ -129,7 +129,7 @@
 
                     <p class="lead text-secondary" id="por-persona">El precio por persona es: </p>
                     <button type="button" class="btn btn-success col-sm btn-anterior">Volver</button>
-                    <button type="button" class="btn btn-success col-sm btn-siguiente" onclick="siguiente()">Siguiente</button>
+                    <button type="button" class="btn btn-success col-sm btn-siguiente">Siguiente</button>
                 </div>
                 
                 <!-- Segundo wizard-->
@@ -142,6 +142,8 @@
                     <button type="button" class="btn btn-success col-sm btn-anterior">Volver</button>
                     <button type="button" class="btn btn-success col-sm btn-siguiente">Siguiente</button>
                 </div>
+
+                <!-- Tercer wizard -->
                 <div class="wiz" id="wiz-3">
                     <form action="" class="" id="form-mobiliario">
                         <p class="lead text-secondary">¿Incluimos mobiliario? (mesas, sillas, manteles) Coste $200</p>
@@ -151,6 +153,7 @@
                         <button type="button" class="btn btn-success col-sm btn-siguiente">Siguiente</button>
                     </form>
                 </div>
+
             <!-- <div class="wiz" id="wiz-4">
                 <form action="" class="" id="form-tot">
 
