@@ -31,6 +31,15 @@ Ofrecer (previo un pago del 30%) pagar en 6 o 12 cuotas el monto restante:
 
 */
 
+// Validar formulario de Contacto
+
+
+
+
+
+
+
+
 // Formulario de Proceso
 
         // Inicialización de variables
@@ -48,7 +57,7 @@ let btnSigue = document.querySelectorAll(".btn-siguiente");
 console.log(btnSigue);
 
 // Selecciono los 3 botones "anterior" del wizzard
-let anterior = document.querySelectorAll(".btn-anterior");
+let btnAnterior = document.querySelectorAll(".btn-anterior");
 
 // Creo el parrafo del error para el wizard
 let noSigue = document.createElement("p");
@@ -60,8 +69,8 @@ noSigue.style.color = "red";
 
 // Entra el div para mostrar el wizard con un onclick
 function catering() {
-    document.querySelector("#catering button").classList.toggle("esconder");
-    document.querySelector(".contiene-wiz").classList.toggle("mostrar");
+    document.querySelector("#catering button").classList.add("esconder");
+    document.querySelector(".contiene-wiz").classList.add("mostrar");
 }
 
 
@@ -123,7 +132,7 @@ function primerWiz(){
 
 
 
-// Muevo el wizard que corresponda, si los campos están seleccionados
+// Continúo el formulario, muevo el wizard que corresponda, si los campos están seleccionados
 function siguiente() {
     if(wiz2.classList.contains("mover-wiz") && !wiz3.classList.contains("mover-wiz")){
             wiz3.classList.add("mover-wiz")
@@ -133,7 +142,7 @@ function siguiente() {
     }
     if (!wiz1.classList.contains("mover-wiz")){
         if (comensales == 0 && !document.querySelector("#pErr")){
-            anterior[0].insertAdjacentElement("beforeBegin",noSigue);
+            btnAnterior[0].insertAdjacentElement("beforeBegin",noSigue);
         } else if (comensales !== 0) {
             wiz1.classList.add("mover-wiz")
         }
@@ -141,14 +150,32 @@ function siguiente() {
 }
 console.log();
 
+// Vuelvo atras en el formulario, muestro nuevamente el wizard que corresponda
+function anterior(){
+    if (!wiz1.classList.contains("mover-wiz")){
+            document.querySelector("#catering button").classList.remove("esconder");
+            document.querySelector(".contiene-wiz").classList.remove("mostrar");
+        }
+        if(wiz1.classList.contains("mover-wiz") && !wiz2.classList.contains("mover-wiz")){
+                wiz1.classList.remove("mover-wiz")
+        }
+    if(wiz2.classList.contains("mover-wiz") && !wiz3.classList.contains("mover-wiz")){
+        wiz2.classList.remove("mover-wiz")
+    }
+}
 
-// Agrego los Listeners a los botones
+
+
+
+// Agrego los Listeners a los botones siguiente
 btnSigue[0].addEventListener("click", siguiente);
 btnSigue[1].addEventListener("click", siguiente);
 btnSigue[2].addEventListener("click", siguiente);
 
-
-
+// Agrego los Listeners a los botones anterior
+btnAnterior[0].addEventListener("click", anterior)
+btnAnterior[1].addEventListener("click", anterior)
+btnAnterior[2].addEventListener("click", anterior)
 
 
 
